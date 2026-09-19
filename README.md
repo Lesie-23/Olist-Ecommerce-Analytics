@@ -1,81 +1,81 @@
-# Olist-Ecommerce-Analytics
+# Olist-Ecommerce-Analytics | SQL & Power BI
 
-How can a marketplace generate R$13.59M in revenue from 96K customers when nearly 97% of customers made only one purchase?
+**How can a marketplace generate R$13.59M in revenue from 96K customers when nearly 97% of customers made only one purchase?**
 
-This project investigates that question by connecting revenue performance, customer retention, logistics reliability, and product satisfaction to identify key business patterns and areas for further investigation.
+This dashboard was built to investigate that question for the Olist marketplace. It connects customer retention, revenue, delivery reliability, and customer satisfaction to understand where performance gaps exist and what areas need further investigation.
 
-##  Business Problem
+> **The analysis flow:** Overview shows the overall business picture → Customer Insights investigates retention and customer value → Logistics & Operations examines delivery and freight performance → Products & Reviews looks at customer satisfaction and its relationship with delivery performance.
 
-Olist generates significant revenue and order volume, but nearly 97% of customers made only one purchase. This raises questions about customer retention and whether operational and product experiences may be contributing to the limited repeat purchasing.
+## Business Problem
 
-The analysis focuses on three areas:
+Strong revenue and order volume do not necessarily mean that customers are returning or receiving a consistent experience.
 
-- **Customer retention:** How strong is repeat purchasing, which customer segments are most valuable, and where are the biggest retention gaps?
-- **Delivery performance:** Which customer states experience higher delivery delays compared with the overall performance?
-- **Customer satisfaction:** Which product categories receive lower review scores, and is there an association between delivery delays and customer satisfaction?
+For Olist, nearly 97% of customers made only one purchase during the period covered by the dataset. At the same time, delivery performance varies across states, freight costs differ considerably by geography, and review scores vary across product categories and delivery-delay segments.
+
+The business needs to answer five questions:
+
+- **How strong is customer retention?**
+- **Which customers and segments contribute the most value?**
+- **Which states experience higher delivery delays and freight costs?**
+- **Are longer delivery delays associated with lower customer satisfaction?**
+- **Which product categories have lower review scores?**
+
+The dashboard was designed to give a clear view of the overall business performance, investigate the main gaps, and highlight areas that require further analysis.
 
 ---
 
-###  Dataset
+## Dataset
 
 Source: Brazilian E-Commerce Public Dataset — Olist
-Period: 2016–2018
-Orders: ~100K
-Source Tables: 9 CSV tables
+**Period:** September 2016 – October 2018  
+**Customers:** ~96K  
+**Orders:** ~99K  
+**Revenue analyzed:** R$13.59M  
+**Source tables:** 9 CSV files
 
-Tables
-olist_orders
-olist_order_items
-olist_customers
-olist_products
-olist_order_payments
-olist_order_reviews
-olist_sellers
-olist_product_category_info
-geolocation
+### Source Tables
 
-Loaded into MySQL: 9 tables
-Loaded into Power BI: 8 tables
+- `olist_orders`
+- `olist_order_items`
+- `olist_customers`
+- `olist_products`
+- `olist_order_payments`
+- `olist_order_reviews`
+- `olist_sellers`
+- `olist_product_category_info`
+- `geolocation`
+
+- **Loaded into MySQL:** 9 source tables
+- **Imported into Power BI:** 8 source tables
+- **Created in Power BI:** 1 customer-level RFM table
 
 The geolocation table was excluded from the Power BI model because it was not required for the final business analysis.
 
 --- 
 
-##  Tools
+## Tools
 
-**Python · SQL · MySQL · Power BI Desktop · Power Query · DAX**
+**SQL · MySQL · Power BI Desktop · Power Query · DAX**
+
+- **SQL / MySQL:** Data analysis and business queries
+- **Power Query:** Data transformation and preparation
+- **Power BI / DAX:** Data modeling, measures, segmentation, and dashboard development
 
 ---
-###  Data Preparation & Loading
+## Technical Approach
 
-The Olist dataset contains 9 related CSV tables with a large volume of records and columns. During the initial attempt to load the complete dataset into MySQL, the loading process did not complete successfully due to the data volume.
-
-To address this, Python was used for data profiling and preparation before loading the data into MySQL.
-
-Data preparation and modeling steps:
-
--Performed data profiling in Python to understand the datasets, columns, data types, and overall structure.
-
--Removed unnecessary columns that were not required for the analysis to reduce the data volume.
-
--Loaded all 9 prepared tables into MySQL using SQLAlchemy.
-
--Used customer_unique_id as the customer-level identifier for customer analysis rather than customer_id, allowing purchases associated with the same underlying customer to be analyzed together.
-
--Connected Power BI to MySQL and imported 8 of the 9 tables into the Power BI model.
-
--Excluded the geolocation table from Power BI because it was not required for the final business analysis.
-
--In Power Query, merged the order_reviews data into the orders data to make review information available alongside order-level analysis.
-
--Disabled the standalone order_reviews table after the merge to avoid maintaining a duplicate table in the Power BI model.
-
-
-This approach allowed the complete prepared dataset to be retained in MySQL while keeping the Power BI model focused on the data required for revenue, customer, delivery, product, and review analysis.
+- **Data loading:** Loaded all 9 Olist source tables into MySQL and connected MySQL to Power BI for analysis.
+- **Data modeling:** Used 8 imported source tables in Power BI, along with a dedicated Date table for time-based analysis and a customer-level RFM table for segmentation.
+- **Customer analysis:** Used `customer_unique_id` as the customer-level identifier to analyze repeat purchasing, customer behavior, and RFM segmentation.
+- **RFM analysis:** Created a dedicated RFM table containing Recency, Frequency, Monetary value, RFM scores, and customer segments.
+- **Data transformation:** Used Power Query to merge review information into the order-level data.
+- **DAX:** Created **35 measures** covering revenue, orders, AOV, repeat purchase rate, delivery performance, review scores, and other dashboard metrics.
+- **SQL analysis:** Used MySQL to analyze revenue trends, customer spending, seller performance, retention, delivery performance, and customer satisfaction.
+- **Dashboard design:** Built **5 Power BI pages** covering the overall business view, customer insights, logistics and operations, and products and reviews.
 
 ---
 
-##  SQL Analysis
+## SQL Analysis
 
 1. Top 5 Customers by Total Payment Value
 2. Top 3 Sellers by Revenue Within Each Seller State
@@ -96,57 +96,108 @@ This approach allowed the complete prepared dataset to be retained in MySQL whil
 
 
 ### Home
+The Home page provides navigation across the main sections of the dashboard.
 <img width="1413" height="792" alt="Home page" src="https://github.com/user-attachments/assets/8202e5d3-796d-4500-a87d-1ce19a12d2ec" />
 
 
 
 ### Overview
-Provides an executive-level view of revenue, orders, customer retention, average order value, and delivery performance.
+The Overview page provides an executive view of revenue, customer retention, order performance, and delivery performance.
  <img width="1424" height="799" alt="overview page" src="https://github.com/user-attachments/assets/cee5cd99-2794-4b85-9033-7c2775a7527e" />
 
 
 ### Customer Insights
-Nearly 97% of 96K customers made only one purchase. This page investigates the retention gap through RFM segmentation, purchase frequency, and city-level revenue concentration.
+Nearly 97% of the 96K customers made only one purchase. This page investigates the retention gap through purchase behavior, RFM segmentation, and revenue concentration.
+
+RFM analysis was used to segment customers based on:
+
+- **Recency** – how recently the customer purchased
+- **Frequency** – how often the customer purchased
+- **Monetary** – how much the customer spent
+
+The analysis helps identify differences in customer value and purchasing behavior.
 <img width="1408" height="789" alt="Customer Insights" src="https://github.com/user-attachments/assets/95932366-0317-45c3-8d8f-7b0aef77f8ca" />
 
 
 ### Logistics & Operations
-An overall on-time delivery rate of 90.44% hides significant state-level variation. RJ's late rate is 11.63% compared with 4.36% in SP at comparable order volumes. Freight costs also vary substantially across states, with RO and CE averaging more than twice the R$22.82 overall average.
+The overall on-time delivery rate is 90.44%, but state-level performance varies considerably. RJ has an 11.63% late-delivery rate compared with 4.36% in SP at comparable order volumes, while freight costs also vary substantially across states.
 <img width="1420" height="789" alt="Logistics   Operations page" src="https://github.com/user-attachments/assets/23937ab7-a751-4011-b1a5-e548505b3fe5" />
 
 
 ### Products & Reviews
-Services & Security scores 2.5/5 — 1.6 points below the 4.1 overall average. Review scores also tend to decline across longer delivery-delay segments, indicating an association between delivery performance and customer satisfaction.
+Customer satisfaction varies across product categories, with Services & Security averaging 2.5/5 compared with the overall 4.1/5 average. Review scores also tend to decline across longer delivery-delay segments, indicating an association between delivery performance and customer satisfaction.
 <img width="1402" height="786" alt="Products   Reviews page" src="https://github.com/user-attachments/assets/d55183c5-7f7d-4bac-b273-3514162e87c5" />
 
 ---
 
-####  Key Insights
+## Key Insights
 
-- **Customer retention is a major opportunity:** Nearly 97% of customers made only one purchase, indicating a very low repeat-purchase rate and a significant gap between customer acquisition and repeat purchasing.
+### 1. Repeat purchasing is very low
 
-- **Overall delivery performance hides state-level variation:** The overall on-time delivery rate is 90.44%, but delivery performance varies considerably across customer states. RJ, for example, has an 11.63% late-delivery rate compared with 4.36% in SP at comparable order volumes.
+Nearly **97% of customers made only one purchase**, while only a small percentage returned for additional purchases.
 
-- **Freight costs vary substantially by geography:** Average freight costs differ considerably across states. RO and CE have average freight costs more than twice the R$22.82 overall average, highlighting areas for further investigation.
+This creates a significant retention gap and raises questions about what happens after the customer's first purchase.
 
-- **Longer delivery delays are associated with lower customer satisfaction:** Average review scores decline across longer delivery-delay segments, indicating a relationship between delivery performance and customer satisfaction.
+### 2. Overall delivery performance hides state-level differences
 
-- **Customer satisfaction varies across product categories:** Certain product categories have materially lower average review scores than the overall average, highlighting categories that warrant deeper investigation into product, seller, or service-related issues.
+The overall on-time delivery rate is **90.44%**, but state-level performance varies considerably.
 
-  #### Recommendations
+RJ has an **11.63% late-delivery rate**, compared with **4.36% in SP** at comparable order volumes.
 
-- **Retention:** Investigate whether low repeat-purchase rates are associated with specific product categories, delivery experiences, or customer locations to identify potential retention drivers.
+### 3. Freight costs vary by geography
 
-- **State Delivery Performance:** Investigate carrier, seller-dispatch, and routing factors in states with higher late-delivery rates to identify operational improvement opportunities.
+Average freight costs differ substantially across states.
 
-- **Freight Cost:** Examine whether seller distribution, shipping distance, or pricing structure contributes to higher freight costs in states with above-average shipping expenses.
+RO and CE have average freight costs more than twice the overall average of **R$22.82**, making them areas worth investigating further.
 
-- **Product Satisfaction:** Review lower-rated product categories and examine recurring review themes, seller performance, and product-related issues.
+### 4. Longer delivery delays are associated with lower review scores
 
-- **Delivery & Satisfaction:** Monitor delivery performance alongside customer reviews, particularly for longer-delay segments, to determine whether improving delivery reliability could support better customer experiences.
+Average review scores tend to decline as delivery delays increase.
+
+This does not prove that delays cause lower satisfaction, but the relationship is strong enough to justify further investigation.
+
+### 5. Customer satisfaction varies across product categories
+
+Some categories perform considerably below the overall review-score average.
+
+These categories could be investigated further by looking at seller performance, product issues, and fulfillment experience.
 
 ---
 
-##  About
+## Recommendations
 
+### Retention
+
+Investigate repeat-purchase behavior by product category, customer location, RFM segment, and delivery experience to identify potential retention drivers.
+
+### State Delivery Performance
+
+For states with higher late-delivery rates, investigate carrier performance, seller location, dispatch times, and routing factors to understand where delays are occurring.
+
+### Freight Cost
+
+Analyze shipping distance, seller distribution, and product characteristics to understand why some states have significantly higher freight costs.
+
+### Product Satisfaction
+
+Investigate lower-rated categories at the seller and product level to separate product-related issues from seller or fulfillment issues.
+
+### Delivery & Satisfaction
+
+Track delivery performance alongside review scores to investigate whether improvements in delivery reliability are associated with better customer satisfaction.
+
+---
+
+## What This Project Demonstrates
+
+This project demonstrates how SQL and Power BI can be used to analyze an e-commerce marketplace across multiple business areas.
+
+Starting with a low repeat-purchase rate, the analysis connects **customer behavior, RFM segmentation, revenue, delivery performance, freight costs, and customer satisfaction** to understand where the biggest differences appear.
+
+**The dashboard moves from “What is happening?” to “Where are the gaps?” to “What should be investigated next?”**
+
+---
+
+## About
+   Lesie Fernandes
 🔗 [LinkedIn](#) | [Live Dashboard →](https://app.powerbi.com/view?r=eyJrIjoiNDc4OWFmYmQtNGFhMC00MWNmLThjYjktOWNiMzBjMzNkZDIzIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9)
