@@ -36,11 +36,14 @@ Loaded into Power BI: 8 tables
 
 The geolocation table was excluded from the Power BI model because it was not required for the final business analysis.
 
-🛠️ Tools
+--- 
 
-Python ·  MySQL · Power BI Desktop ·
+### 🛠️ Tools
+
+##### Python ·  MySQL · Power BI Desktop 
+
 ---
-🔧 Data Preparation & Loading
+### 🔧 Data Preparation & Loading
 
 The Olist dataset contains 9 related CSV tables with a large volume of records and columns. During the initial attempt to load the complete dataset into MySQL, the loading process did not complete successfully due to the data volume.
 
