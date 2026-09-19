@@ -89,7 +89,7 @@ The geolocation table was excluded from the Power BI model because it was not re
 10. Delivery & Customer Satisfaction
 --- 
 
-## 📊 Dashboard Pages
+##  Dashboard Pages
 
 ### Data Model<img width="1363" height="798" alt="Data Model" src="https://github.com/user-attachments/assets/76737914-6c40-4de5-814b-a89e65cd41a9" />
 
