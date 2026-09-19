@@ -1,43 +1,64 @@
 # Olist-Ecommerce-Analytics
 
-# 🛒 Olist E-Commerce — Business Performance Analytics Dashboard
+How can a marketplace generate R$13.59M in revenue from 96K customers when nearly 97% of customers made only one purchase?
 
-How can a marketplace generate R$ 13.59M in revenue from 96,000 customers 
-and still have 97% of those customers never place a second order?
+This project investigates that question by connecting revenue performance, customer retention, logistics reliability, and product satisfaction to identify key business patterns and areas for further investigation.
 
-This dashboard was built to investigate that question. It connects revenue 
-performance, customer retention, logistics reliability, and product quality 
-— turning those findings into priorities for business and operations leadership.
+🚩 Business Problem
 
+Growth in orders does not necessarily mean customers are being served effectively.
+
+Olist needed answers to three key questions:
+
+Where is customer retention underperforming?
+Where is logistics creating risk at the state level — not just on average?
+Which product categories have lower customer satisfaction, and is delivery performance associated with lower review scores?
+🗂️ Dataset
+
+Source: Brazilian E-Commerce Public Dataset — Olist
+Period: 2016–2018
+Orders: ~100K
+Source Tables: 9 CSV tables
+
+Tables
+olist_orders
+olist_order_items
+olist_customers
+olist_products
+olist_order_payments
+olist_order_reviews
+olist_sellers
+olist_product_category_info
+geolocation
+
+Loaded into MySQL: 9 tables
+Loaded into Power BI: 8 tables
+
+The geolocation table was excluded from the Power BI model because it was not required for the final business analysis.
+
+🛠️ Tools
+
+Python ·  MySQL · Power BI Desktop ·
 ---
+🔧 Data Preparation & Loading
 
-## 🚩 Business Problem
+The Olist dataset contains 9 related CSV tables with a large volume of records and columns. During the initial attempt to load the complete dataset into MySQL, the loading process did not complete successfully due to the data volume.
 
-Growth in orders does not mean customers are being served well.
+To address this, Python was used for data profiling and preparation before loading the data into MySQL.
 
-Olist needed answers to three questions:
+Data preparation and modeling steps
+Performed data profiling in Python to understand the datasets, columns, data types, and overall structure.
+Removed unnecessary columns that were not required for the analysis to reduce the data volume.
+Loaded all 9 prepared tables into MySQL using SQLAlchemy.
+Used customer_unique_id as the customer-level identifier for customer analysis rather than customer_id, allowing purchases associated with the same underlying customer to be analyzed together.
+Connected Power BI to MySQL and imported 8 of the 9 tables into the Power BI model.
+Excluded the geolocation table from Power BI because it was not required for the final business analysis.
+In Power Query, merged the order_reviews data into the orders data to make review information available alongside order-level analysis.
+Disabled the standalone order_reviews table after the merge to avoid maintaining a duplicate table in the Power BI model.
 
-1. Where is customer retention failing?
-2. Where is logistics creating risk at the state level — not just on average?
-3. Which product categories are damaging the brand, and does late delivery explain it?
+This approach allowed the complete prepared dataset to be retained in MySQL while keeping the Power BI model focused on the data required for revenue, customer, delivery, product, and review analysis.
 
----
-
-## 🗂️ Dataset
-
-**Source:** [Brazilian E-Commerce Public Dataset — Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)  
-**Period:** 2016–2018 | **Orders:** ~100K |
-
-Tables used: `olist_orders`, `olist_order_items`, `olist_customers`, 
-`olist_products`, `olist_order_payments`, `olist_sellers`,`olist_product_category_info`.
-
----
-
-## 🛠️ Tools
-
-Power BI Desktop · MYSQL.Python
-
----
+--- 
 
 ## 📊 Dashboard Pages
 
@@ -50,6 +71,7 @@ Power BI Desktop · MYSQL.Python
 
 
 ### Overview
+Provides an executive-level view of revenue, orders, customer retention, average order value, and delivery performance.
  <img width="1424" height="799" alt="overview page" src="https://github.com/user-attachments/assets/cee5cd99-2794-4b85-9033-7c2775a7527e" />
 
 
@@ -75,26 +97,20 @@ making logistics a satisfaction lever, not just an operations metric.
 
 ---
 
-## 💡 Key Insights
+## Key Insights
+- Retention is a major opportunity — nearly 97% of customers made only one purchase, indicating a very low repeat-purchase rate.
+- Average delivery performance hides state-level variation — some states perform substantially below the overall on-time delivery rate.
+- Freight costs are geographically concentrated — some states have substantially higher average freight costs than the national average.
+- Late deliveries are associated with lower review scores — longer delivery delays tend to correspond with weaker customer satisfaction.
+- Customer satisfaction varies by product category — certain categories show materially lower review scores than the overall average.
 
-- **Retention is the core problem** — 97% one-time buyers is not a 
-  retention challenge; it means the platform has not yet built a loyal base
-- **The average on-time rate overstates reliability** — five states 
-  fall below 83%, with AL at 75.54%
-- **Freight cost is geographically concentrated** — remote states pay 
-  a premium that may suppress repeat demand in those markets
-- **Late deliveries and low review scores move together** — consistent 
-  enough across states to treat delivery improvement as a brand initiative
+  ## Recommendations
 
-  ## ✅ Recommendations
-
-| Priority | Action |
-|---|---|
-| Retention | Investigate whether low repeat rates tie to category, delivery experience, or city — before assuming a single cause |
-| RJ Delivery | RJ's 11.63% late rate at high volume points to a carrier or routing issue — not a platform-wide problem |
-| Freight Cost | RO, CE, and PB pay 2x the national average — assess whether seller distribution or pricing is the lever |
-| Services & Security | A 2.5/5 score on a 5-point scale is too large a gap to ignore — needs a dedicated category review |
-| Delivery → Satisfaction | Set logistics improvement goals alongside review score targets — the data supports treating them as the same initiative |
+- Retention -	Investigate whether low repeat rates are associated with product category, delivery experience, or customer location before assuming a single cause.
+- State Delivery Performance- 	Investigate carrier, seller-dispatch, and routing factors contributing to states with higher late-delivery rates.
+- Freight Cost - 	Investigate whether seller distribution, shipping distance, or pricing structure contributes to higher freight costs in affected states.
+- Product Satisfaction- 	Review lower-rated product categories to identify recurring customer complaints and potential product or seller-level issues.
+- Delivery → Satisfaction- 	Monitor delivery performance alongside review scores because lower review scores are observed in longer-delay segments.
 
 ---
 
@@ -109,7 +125,7 @@ To address this, I used Python for data profiling and preparation before loading
 * Performed data profiling in Python to understand the datasets, columns, data types, and overall structure.
 * Removed unnecessary columns that were not required for the analysis to reduce the data volume.
 * Loaded all **9 prepared tables into MySQL** using SQLAlchemy.
-* Used `customer_unique_id` as the primary customer identifier for customer-level analysis rather than `customer_id`, allowing purchases associated with the same underlying customer to be analyzed together.
+* Used `customer_unique_id` as the customer-level identifier for customer analysis rather than `customer_id`, allowing purchases associated with the same underlying customer to be analyzed together.
 * Connected Power BI to MySQL and imported **8 of the 9 tables** into the Power BI model.
 * Excluded the **geolocation table** from Power BI because it was not required for the final business analysis.
 * In Power Query, merged the `order_reviews` data into the orders data to make review information available alongside order-level analysis.
