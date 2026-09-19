@@ -137,59 +137,67 @@ Customer satisfaction varies across product categories, with Services & Security
 
 ## Key Insights
 
-### 1. Repeat purchasing is very low
+### 1. Repeat purchasing remains low
 
-Nearly **97% of customers made only one purchase**, while only a small percentage returned for additional purchases.
+Olist had around **96K customers**, but only **3.12% made more than one purchase**. **97% of customers purchased only once**, while just **2.76% made two purchases**.
 
-This creates a significant retention gap and raises questions about what happens after the customer's first purchase.
+This highlights a clear retention challenge and suggests that understanding what drives customers to return should be a priority for further analysis.
 
-### 2. Overall delivery performance hides state-level differences
+### 2. Revenue is concentrated in a few states
 
-The overall on-time delivery rate is **90.44%**, but state-level performance varies considerably.
+**São Paulo generated R$5.2M in revenue**, compared with **R$1.8M from Rio de Janeiro**, the second-highest state.
 
-RJ has an **11.63% late-delivery rate**, compared with **4.36% in SP** at comparable order volumes.
+The concentration of revenue across the leading states suggests that geographic performance is an important part of understanding the marketplace's overall revenue distribution.
 
-### 3. Freight costs vary by geography
+### 3. Overall delivery performance hides state-level differences
 
-Average freight costs differ substantially across states.
+The overall on-time delivery rate was **90.44%**, but performance varied considerably across states.
 
-RO and CE have average freight costs more than twice the overall average of **R$22.82**, making them areas worth investigating further.
+The lowest on-time delivery rates were **AL (75.54%), RR (78.26%), MA (79.25%), SE (81.14%), and CE (82.56%)**. Among the higher-volume states, **RJ had an 11.63% late-delivery rate compared with 4.36% in SP**.
 
-### 4. Longer delivery delays are associated with lower review scores
+This shows that the overall delivery rate does not fully capture the differences in performance across states.
 
-Average review scores tend to decline as delivery delays increase.
+### 4. Freight costs vary significantly across seller states
 
-This does not prove that delays cause lower satisfaction, but the relationship is strong enough to justify further investigation.
+The overall average freight cost was **R$22.82**, while several seller states were substantially higher.
 
-### 5. Customer satisfaction varies across product categories
+**RO had the highest average freight cost at R$50.91**, followed by **CE at R$47.91** and **PB at R$41.37**.
 
-Some categories perform considerably below the overall review-score average.
+These differences warrant further analysis of shipping distance, seller location, and product characteristics to understand what is driving the higher costs.
 
-These categories could be investigated further by looking at seller performance, product issues, and fulfillment experience.
+### 5. Customer satisfaction varies across categories
+
+The overall average review score was **4.1/5**, while **Services & Security averaged 2.5/5**, a **1.6-point difference** from the overall average.
+
+Review scores also vary across states with different delivery experiences, indicating that customer satisfaction should be examined alongside product, seller, and fulfillment factors.
 
 ---
 
 ## Recommendations
 
-### Retention
+### 1. Retention
 
-Investigate repeat-purchase behavior by product category, customer location, RFM segment, and delivery experience to identify potential retention drivers.
+With only **3.12% of customers making repeat purchases**, analyze repeat-purchase behavior by **product category, customer location, RFM segment, and first-order experience** to identify patterns among returning customers.
 
-### State Delivery Performance
+### 2. Geographic Revenue Concentration
 
-For states with higher late-delivery rates, investigate carrier performance, seller location, dispatch times, and routing factors to understand where delays are occurring.
+With **São Paulo generating R$5.2M** compared with **R$1.8M from Rio de Janeiro**, analyze revenue by **state, customer count, order volume, and average order value** to understand what is driving the geographic concentration.
 
-### Freight Cost
+### 3. State Delivery Performance
 
-Analyze shipping distance, seller distribution, and product characteristics to understand why some states have significantly higher freight costs.
+Focus on states with lower on-time delivery rates, particularly **AL, RR, MA, SE, and CE**.
 
-### Product Satisfaction
+Compare **seller location, carrier performance, dispatch times, and delivery routes** with better-performing states to identify potential sources of delays.
 
-Investigate lower-rated categories at the seller and product level to separate product-related issues from seller or fulfillment issues.
+### 4. Freight Cost
 
-### Delivery & Satisfaction
+With RO's average freight cost at **R$50.91**, compared with the overall average of **R$22.82**, investigate **shipping distance, seller distribution, and product characteristics** in high-cost states.
 
-Track delivery performance alongside review scores to investigate whether improvements in delivery reliability are associated with better customer satisfaction.
+### 5. Product & Customer Satisfaction
+
+With **Services & Security averaging 2.5/5 compared with the overall 4.1/5**, investigate the category at the **seller and product level**.
+
+Reviewing product ratings alongside seller performance, review sentiment, and delivery experience can help identify the factors contributing to lower customer satisfaction.
 
 ---
 
