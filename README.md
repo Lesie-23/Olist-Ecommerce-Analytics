@@ -4,15 +4,15 @@ How can a marketplace generate R$13.59M in revenue from 96K customers when nearl
 
 This project investigates that question by connecting revenue performance, customer retention, logistics reliability, and product satisfaction to identify key business patterns and areas for further investigation.
 
- Business Problem
+##  Business Problem
 
-Growth in orders does not necessarily mean customers are being served effectively.
+Olist generates significant revenue and order volume, but nearly 97% of customers made only one purchase. This raises questions about customer retention and whether operational and product experiences may be contributing to the limited repeat purchasing.
 
-Olist needed answers to three key questions:
+The analysis focuses on three areas:
 
-Where is customer retention underperforming?
-Where is logistics creating risk at the state level — not just on average?
-Which product categories have lower customer satisfaction, and is delivery performance associated with lower review scores?
+- **Customer retention:** How strong is repeat purchasing, which customer segments are most valuable, and where are the biggest retention gaps?
+- **Delivery performance:** Which customer states experience higher delivery delays compared with the overall performance?
+- **Customer satisfaction:** Which product categories receive lower review scores, and is there an association between delivery delays and customer satisfaction?
 
 ---
 
