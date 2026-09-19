@@ -26,10 +26,10 @@ Olist needed answers to three questions:
 ## 🗂️ Dataset
 
 **Source:** [Brazilian E-Commerce Public Dataset — Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)  
-**Period:** 2016–2018 | **Orders:** ~100K | **Type:** Real data, anonymised
+**Period:** 2016–2018 | **Orders:** ~100K |
 
 Tables used: `olist_orders`, `olist_order_items`, `olist_customers`, 
-`olist_products`, `olist_order_reviews`, `olist_sellers`.
+`olist_products`, `olist_order_payments`, `olist_sellers`,`olist_product_category_info`.
 
 ---
 
@@ -39,14 +39,19 @@ Power BI Desktop · MYSQL.Python
 
 ---
 
-
 ## 📊 Dashboard Pages
+
+### Data Model<img width="1363" height="798" alt="Data Model" src="https://github.com/user-attachments/assets/76737914-6c40-4de5-814b-a89e65cd41a9" />
+
+
+
 ### Home
-Home | ![Home](screenshots/01_home.png) |
+<img width="1397" height="786" alt="Home page" src="https://github.com/user-attachments/assets/086222d9-3360-4d90-87d7-c57892a3f0fa" />
+
 
 ### Overview
- ![Overview](<img width="1424" height="799" alt="overview page" src="https://github.com/user-attachments/assets/cee5cd99-2794-4b85-9033-7c2775a7527e" />
-) |
+ <img width="1424" height="799" alt="overview page" src="https://github.com/user-attachments/assets/cee5cd99-2794-4b85-9033-7c2775a7527e" />
+
 
 ### Customer Insights
 97% of 96K customers made only one purchase. This page investigates 
@@ -92,6 +97,25 @@ making logistics a satisfaction lever, not just an operations metric.
 | Delivery → Satisfaction | Set logistics improvement goals alongside review score targets — the data supports treating them as the same initiative |
 
 ---
+
+### Data Preparation & Loading
+
+The Olist dataset contains 9 related CSV tables with a large volume of records and columns. During the initial attempt to load the complete dataset into MySQL, the loading process did not complete successfully due to the data volume.
+
+To address this, I used Python for data profiling and preparation before loading the data into MySQL.
+
+**Data preparation and modeling steps:**
+
+* Performed data profiling in Python to understand the datasets, columns, data types, and overall structure.
+* Removed unnecessary columns that were not required for the analysis to reduce the data volume.
+* Loaded all **9 prepared tables into MySQL** using SQLAlchemy.
+* Used `customer_unique_id` as the primary customer identifier for customer-level analysis rather than `customer_id`, allowing purchases associated with the same underlying customer to be analyzed together.
+* Connected Power BI to MySQL and imported **8 of the 9 tables** into the Power BI model.
+* Excluded the **geolocation table** from Power BI because it was not required for the final business analysis.
+* In Power Query, merged the `order_reviews` data into the orders data to make review information available alongside order-level analysis.
+* Disabled the standalone `order_reviews` table after the merge to avoid maintaining a duplicate table in the Power BI model.
+
+This approach allowed the complete prepared dataset to be retained in MySQL while keeping the Power BI model focused on the tables and fields required for revenue, customer, delivery, product, and review analysis.
 
 
 
