@@ -91,7 +91,9 @@ The geolocation table was excluded from the Power BI model because it was not re
 
 ##  Dashboard Pages
 
-### Data Model<img width="1363" height="798" alt="Data Model" src="https://github.com/user-attachments/assets/76737914-6c40-4de5-814b-a89e65cd41a9" />
+### Data Model
+<img width="1356" height="798" alt="Data Model" src="https://github.com/user-attachments/assets/0ca34dd6-4a8c-49af-9b2b-39b6eb5b77ec" />
+
 
 
 
@@ -116,17 +118,20 @@ RFM analysis was used to segment customers based on:
 - **Monetary** – how much the customer spent
 
 The analysis helps identify differences in customer value and purchasing behavior.
-<img width="1408" height="789" alt="Customer Insights" src="https://github.com/user-attachments/assets/95932366-0317-45c3-8d8f-7b0aef77f8ca" />
+<img width="1420" height="788" alt="Customer Insights" src="https://github.com/user-attachments/assets/40e70792-b321-4c69-a516-8867082becea" />
+
 
 
 ### Logistics & Operations
 The overall on-time delivery rate is 90.44%, but state-level performance varies considerably. RJ has an 11.63% late-delivery rate compared with 4.36% in SP at comparable order volumes, while freight costs also vary substantially across states.
-<img width="1420" height="789" alt="Logistics   Operations page" src="https://github.com/user-attachments/assets/23937ab7-a751-4011-b1a5-e548505b3fe5" />
+<img width="1418" height="795" alt="Logistics   Operations page" src="https://github.com/user-attachments/assets/2972e1cc-171f-4d8c-882a-57e03161b4a1" />
+
 
 
 ### Products & Reviews
 Customer satisfaction varies across product categories, with Services & Security averaging 2.5/5 compared with the overall 4.1/5 average. Review scores also tend to decline across longer delivery-delay segments, indicating an association between delivery performance and customer satisfaction.
-<img width="1402" height="786" alt="Products   Reviews page" src="https://github.com/user-attachments/assets/d55183c5-7f7d-4bac-b273-3514162e87c5" />
+<img width="1410" height="800" alt="Products   Reviews page" src="https://github.com/user-attachments/assets/b56dcf1e-b1c5-47e9-a916-5f3ccb9c49c5" />
+
 
 ---
 
