@@ -13,7 +13,10 @@ Olist needed answers to three key questions:
 Where is customer retention underperforming?
 Where is logistics creating risk at the state level — not just on average?
 Which product categories have lower customer satisfaction, and is delivery performance associated with lower review scores?
-🗂️ Dataset
+
+---
+
+### 🗂️ Dataset
 
 Source: Brazilian E-Commerce Public Dataset — Olist
 Period: 2016–2018
