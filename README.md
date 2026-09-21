@@ -7,13 +7,13 @@ This project analyzes the Olist marketplace using SQL and Power BI. It looks at 
 
 > **The analysis flow:** Overview shows the overall business picture → Customer Insights investigates retention and customer value → Logistics & Operations examines delivery and freight performance → Products & Reviews looks at customer satisfaction and its relationship with delivery performance.
 
-## Problem Statement:
+## Problem Statement
 
 Olist is a Brazilian e-commerce marketplace serving customers across multiple regions and product categories. Despite generating R$13.59M in revenue from approximately 96K customers, nearly 97% of customers made only one purchase during the period analyzed.
 
 This raises concerns around customer retention and the consistency of the customer experience, particularly as delivery performance, freight costs, and review scores vary across regions and product categories. Olist needs to understand these patterns to identify the key areas affecting customer value, delivery performance, and satisfaction.
 
-The business needs to answer five questions:
+The analysis focuses on five key questions:
 
 
 - **How strong is customer retention?**
@@ -79,14 +79,14 @@ The `geolocation` table was excluded from the Power BI model because it was not 
 
 1. Top 5 Customers by Total Payment Value
 2. Top 3 Sellers by Revenue Within Each Seller State
-3. Monthly Revenue & Running Total
+3. Monthly Revenue and Running Total
 4. Customers Spending Above Average
 5. Second-Highest Revenue Category by Seller State
 6. Revenue by Product Category
 7. Monthly Revenue Trend
 8. Customer Retention
 9. Delivery Performance by State
-10. Delivery & Customer Satisfaction
+10. Delivery Performance and Customer Satisfaction
 --- 
 
 ##  Dashboard Pages
@@ -120,7 +120,7 @@ RFM analysis segments customers based on:
 - **Recency** – how recently the customer purchased
 - **Frequency** – how often the customer purchased
 - **Monetary** – how much the customer spent
-The analysis helps identify differences in customer value and purchasing behavior.
+This page examines customer retention and value through purchase behavior, RFM segmentation, and customer revenue patterns.
 <img width="1377" height="764" alt="Customer Insights" src="https://github.com/user-attachments/assets/9903e603-e832-4043-9dc2-4662dbcad9f9" />
 
 
@@ -128,7 +128,7 @@ The analysis helps identify differences in customer value and purchasing behavio
 
 ### Logistics & Operations
 
-The overall on-time delivery rate is 90.44%, but delivery performance varies considerably across states. For example, RJ has an 11.63% late-delivery rate compared with 4.36% in SP despite comparable order volumes. Freight costs also vary substantially across states, highlighting differences in delivery performance and logistics costs.
+The overall on-time delivery rate is 90.44%, but delivery performance varies considerably across states. For example, RJ has an 11.63% late-delivery rate compared with 4.36% in SP despite comparable order volumes. Freight costs also vary substantially across seller states.
 <img width="1371" height="763" alt="Logistics   Operations page" src="https://github.com/user-attachments/assets/6a775721-a00b-45c4-a702-c941f60b2ff5" />
 
 
