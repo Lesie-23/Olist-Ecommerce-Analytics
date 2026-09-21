@@ -106,7 +106,8 @@ The Home page provides navigation across the main sections of the dashboard.
 
 ### Overview
 The Overview page provides an executive view of revenue, customer retention, order performance, and delivery performance.
-<img width="1357" height="757" alt="overview page" src="https://github.com/user-attachments/assets/d77de007-25c7-4474-98bc-969f174b4638" />
+<img width="1372" height="769" alt="overview page" src="https://github.com/user-attachments/assets/a73316f8-9161-43f8-a0eb-75eee939d941" />
+
 
 
 
@@ -120,21 +121,20 @@ RFM analysis was used to segment customers based on:
 - **Monetary** – how much the customer spent
 
 The analysis helps identify differences in customer value and purchasing behavior.
-<img width="1267" height="705" alt="Customer Insights" src="https://github.com/user-attachments/assets/270490f5-c09b-498a-a3a2-3e78c53ab981" />
+<img width="1377" height="764" alt="Customer Insights" src="https://github.com/user-attachments/assets/9903e603-e832-4043-9dc2-4662dbcad9f9" />
 
 
 
 
 ### Logistics & Operations
 The overall on-time delivery rate is 90.44%, but state-level performance varies considerably. RJ has an 11.63% late-delivery rate compared with 4.36% in SP at comparable order volumes, while freight costs also vary substantially across states.
-<img width="1418" height="795" alt="Logistics   Operations page" src="https://github.com/user-attachments/assets/2972e1cc-171f-4d8c-882a-57e03161b4a1" />
+<img width="1371" height="763" alt="Logistics   Operations page" src="https://github.com/user-attachments/assets/6a775721-a00b-45c4-a702-c941f60b2ff5" />
 
 
 
 ### Products & Reviews
 Customer satisfaction varies across product categories, with Services & Security averaging 2.5/5 compared with the overall 4.1/5 average. Review scores also tend to decline across longer delivery-delay segments, indicating an association between delivery performance and customer satisfaction.
-<img width="1410" height="800" alt="Products   Reviews page" src="https://github.com/user-attachments/assets/b56dcf1e-b1c5-47e9-a916-5f3ccb9c49c5" />
-
+<img width="1381" height="766" alt="Products   Reviews page" src="https://github.com/user-attachments/assets/afac52ab-ff83-413b-9683-7ad530005ee4" />
 
 ---
 
