@@ -27,6 +27,7 @@ The analysis focuses on five key questions:
 ## Dataset
 
 **Source:** Brazilian E-Commerce Public Dataset — Olist  - https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+
 **Period:** September 2016 – October 2018  
 **Customers:** ~96K  
 **Orders:** ~99K  
