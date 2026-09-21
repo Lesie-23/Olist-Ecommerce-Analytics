@@ -92,7 +92,8 @@ The geolocation table was excluded from the Power BI model because it was not re
 ##  Dashboard Pages
 
 ### Data Model
-<img width="1356" height="798" alt="Data Model" src="https://github.com/user-attachments/assets/0ca34dd6-4a8c-49af-9b2b-39b6eb5b77ec" />
+<img width="1383" height="745" alt="Data Model" src="https://github.com/user-attachments/assets/b7cfe03a-5c8b-43c4-b9cc-70d826bb6661" />
+
 
 
 
@@ -105,7 +106,8 @@ The Home page provides navigation across the main sections of the dashboard.
 
 ### Overview
 The Overview page provides an executive view of revenue, customer retention, order performance, and delivery performance.
- <img width="1424" height="799" alt="overview page" src="https://github.com/user-attachments/assets/cee5cd99-2794-4b85-9033-7c2775a7527e" />
+<img width="1357" height="757" alt="overview page" src="https://github.com/user-attachments/assets/d77de007-25c7-4474-98bc-969f174b4638" />
+
 
 
 ### Customer Insights
@@ -118,7 +120,8 @@ RFM analysis was used to segment customers based on:
 - **Monetary** – how much the customer spent
 
 The analysis helps identify differences in customer value and purchasing behavior.
-<img width="1420" height="788" alt="Customer Insights" src="https://github.com/user-attachments/assets/40e70792-b321-4c69-a516-8867082becea" />
+<img width="1267" height="705" alt="Customer Insights" src="https://github.com/user-attachments/assets/270490f5-c09b-498a-a3a2-3e78c53ab981" />
+
 
 
 
